@@ -57,10 +57,10 @@ func (leader Leader) String() string {
 }
 
 func ParseLeader(r io.Reader) (leader *Leader, err error) {
-    return readReader(r)
+    return readLeader(r)
 }
 
-func readReader(reader io.Reader) (leader *Leader, err error) {
+func readLeader(reader io.Reader) (leader *Leader, err error) {
     data := make([]byte, 24)
     n, err := io.ReadFull(reader, data)
     if err != nil {
